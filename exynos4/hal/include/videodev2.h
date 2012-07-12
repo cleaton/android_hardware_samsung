@@ -1043,7 +1043,7 @@ struct v4l2_output {
 /*  Values for the 'type' field */
 #define V4L2_OUTPUT_TYPE_MODULATOR		1
 #define V4L2_OUTPUT_TYPE_ANALOG			2
-#define V4L2_OUTPUT_TYPE_ANALOGVGAOVERLAY	3
+#define V4L2_OUTPUT_TYPE_ANAALOGVGAOVERLAY	3
 
 /* capabilities flags */
 #define V4L2_OUT_CAP_PRESETS		0x00000001 /* Supports S_DV_PRESET */
