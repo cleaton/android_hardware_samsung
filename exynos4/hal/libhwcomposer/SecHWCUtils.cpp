@@ -25,7 +25,7 @@
  */
 
 #include "SecHWCUtils.h"
-
+#include "videodev2.h"
 #ifdef BOARD_USE_V4L2_ION
 #define V4L2_BUF_TYPE_OUTPUT V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE
 #define V4L2_BUF_TYPE_CAPTURE V4L2_BUF_TYPE_VIDEO_CAPTURE_MPLANE
@@ -59,7 +59,7 @@ void check_fps()
         memcpy(&tick_old, &tick, sizeof(timeval));
         if (cnt == (10 + CHK_FRAME_CNT)) {
             FPS = 1000*CHK_FRAME_CNT/total;
-            LOGE("[FPS]:%d\n", FPS);
+            ALOGE("[FPS]:%d\n", FPS);
             total = 0;
             cnt = 10;
         }

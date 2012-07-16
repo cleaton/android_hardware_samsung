@@ -26,7 +26,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_PRELINK_MODULE := false
 LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw 
-LOCAL_SHARED_LIBRARIES := liblog libcutils libUMP libGLESv1_CM libion
+LOCAL_SHARED_LIBRARIES := liblog libcutils libGLESv1_CM libion
 
 # Include the UMP header files
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../include
@@ -36,10 +36,11 @@ LOCAL_SRC_FILES := \
 	alloc_device.cpp \
 	framebuffer_device.cpp
 
-LOCAL_MODULE_TAGS := eng
+
 #LOCAL_MODULE := gralloc.default
 LOCAL_MODULE := gralloc.$(TARGET_DEVICE)
-LOCAL_CFLAGS:= -DLOG_TAG=\"gralloc\" -DGRALLOC_32_BITS -DSTANDARD_LINUX_SCREEN
+LOCAL_MODULE_TAGS := eng
+LOCAL_CFLAGS:= -DLOG_TAG=\"gralloc\" -DGRALLOC_32_BITS -DSTANDARD_LINUX_SCREEN -fpermissive
 #LOCAL_CFLAGS+= -DMALI_VSYNC_EVENT_REPORT_ENABLE
 
 LOCAL_CFLAGS += -DSAMSUNG_EXYNOS
